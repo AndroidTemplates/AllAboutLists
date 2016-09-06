@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">ListTemplates</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="navigation_item_1">BasicLists</string>
+    <string name="navigation_item_2">SimpleType1</string>
+    <string name="navigation_item_3">SimpleGridList</string>
+    <string name="navigation_item_6">SimpleHorizontalGrid</string>
+    <string name="navigation_item_4">Heterogeneous</string>
+    <string name="navigation_item_5">Heterogeneous Type1</string>
+    <string name="navigation_item_22">Heterogeneous Type2</string>
+    <string name="navigation_item_33">Section List</string>
+    <string name="navigation_item_66">Homogeneous</string>
+    <string name="section_heterogeneous">Heterogeneous</string>
+    <string name="expandable_list">Expandable</string>
+    <string name="expandable_list_type1">ExpandableRecycler</string>
+    <string name="checked_list">CheckedList</string>
+    <string name="checked_list_type">CheckedRecyclerView</string>
+    <string name="webservice_list_type">WebServiceLists</string>
+    <string name="webservice_list">WebserviceList</string>
+    <string name="swipe_refresh">SwipeRefreshList</string>
+    <string name="animated_lists">Animated Lists</string>
+    <string name="animated_list_type4">LandingAnimatorOnAdd</string>
+    <string name="animated_list_type1">SlideInAnimatorLeftOnAdd</string>
+    <string name="animated_list_type2">ScaleInAnimatorOnAdd</string>
+    <string name="animated_list_type3">FlipOnTopXAnimatorOnAdd</string>
+    <string name="animated_list_type5">ScrollingListType1</string>
+    <string name="animated_list_typ6">ScrollAnimationWithLibrary</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="expandable_list_type2">UsingExpandableListView</string>
+    <string name="db_lists">DataBaseLists</string>
+    <string name="db_list_type1">WebServiceDB</string>
+    <string name="indexed_lists">IndexedLists</string>
+    <string name="indexed_list_type1">IndexedRecyclerView</string>
+    <string name="indexed_list_type2">FastScrollListView</string>
+    <string name="indexed_list_type3">FastScrolledIndexList</string>
+
+
+</resources>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+    android:id="@+id/navigation_item_1"
+    android:title="@string/navigation_item_1">
+    <menu>
+    <item
+    android:id="@+id/navigation_item_2"
+    android:title="@string/navigation_item_2"
+        android:icon="@drawable/ic_list_black_24dp"/>
+    <item
+    android:id="@+id/navigation_item_3"
+    android:title="@string/navigation_item_3"
+        android:icon="@drawable/ic_list_black_24dp"/>
+        <item
+            android:id="@+id/navigation_item_6"
+            android:title="@string/navigation_item_6"
+            android:icon="@drawable/ic_list_black_24dp"/>
+    </menu>
+    </item>
+
+
+
+    <item
+    android:id="@+id/navigation_item_4"
+    android:title="@string/navigation_item_4">
+    <menu>
+    <item
+    android:id="@+id/navigation_item_5"
+    android:title="@string/navigation_item_5"
+        android:icon="@drawable/ic_list_black_24dp"/>
+        <item
+            android:id="@+id/navigation_item_22"
+            android:title="@string/navigation_item_22"
+            android:icon="@drawable/ic_list_black_24dp"/>
+    </menu>
+    </item>
+
+
+    <item
+        android:id="@+id/navigation_item_33"
+        android:title="@string/navigation_item_33"
+        android:icon="@drawable/ic_list_black_24dp">
+        <menu>
+    <item
+        android:id="@+id/navigation_item_66"
+        android:title="@string/navigation_item_66"
+        android:icon="@drawable/ic_list_black_24dp"/>
+
+    <item
+        android:id="@+id/section_heterogeneous"
+        android:title="@string/section_heterogeneous"
+        android:icon="@drawable/ic_list_black_24dp"/>
+
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/expandable_recycler_view"
+        android:title="@string/expandable_list"
+        android:icon="@drawable/ic_list_black_24dp">
+        <menu>
+    <item
+        android:id="@+id/expandable_type1"
+        android:title="@string/expandable_list_type1"
+        android:icon="@drawable/ic_list_black_24dp"/>
+    <item
+        android:id="@+id/expandable_list_type2"
+        android:title="@string/expandable_list_type2"
+        android:icon="@drawable/ic_list_black_24dp"/>
+        </menu>
+</item>
+
+    <item
+        android:id="@+id/webservice_recycler_view"
+        android:title="@string/webservice_list_type"
+        android:icon="@drawable/ic_list_black_24dp">
+        <menu>
+            <item
+                android:id="@+id/webservice_type"
+                android:title="@string/webservice_list"
+                android:icon="@drawable/ic_list_black_24dp"/>
+            <item
+                android:id="@+id/swipe_type"
+                android:title="@string/swipe_refresh"
+                android:icon="@drawable/ic_list_black_24dp"/>
+
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/db_recycler_view"
+        android:title="@string/db_lists"
+        android:icon="@drawable/ic_list_black_24dp">
+        <menu>
+          <item
+                android:id="@+id/db_list_type1"
+                android:title="@string/db_list_type1"
+                android:icon="@drawable/ic_list_black_24dp"/>
+          <!--  <item
+                android:id="@+id/swipe_type"
+                android:title="@string/swipe_refresh"
+                android:icon="@drawable/ic_list_black_24dp"/>-->
+
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/animated_list_types"
+        android:title="@string/animated_lists"
+        android:icon="@drawable/ic_list_black_24dp">>
+        <menu>
+
+            <item
+                android:id="@+id/animated_list_type4"
+                android:title="@string/animated_list_type4"
+                android:icon="@drawable/ic_list_black_24dp"/>
+            <item
+                android:id="@+id/animated_list_type1"
+                android:title="@string/animated_list_type1"
+                android:icon="@drawable/ic_list_black_24dp"/>
+            <item
+                android:id="@+id/animated_list_type2"
+                android:title="@string/animated_list_type2"
+                android:icon="@drawable/ic_list_black_24dp"/>
+            <item
+                android:id="@+id/animated_list_type3"
+                android:title="@string/animated_list_type3"
+                android:icon="@drawable/ic_list_black_24dp"/>
+            <item
+                android:id="@+id/animated_list_type5"
+                android:title="@string/animated_list_type5"
+                android:icon="@drawable/ic_list_black_24dp"/>
+            <item
+                android:id="@+id/animated_list_type6"
+                android:title="@string/animated_list_typ6"
+                android:icon="@drawable/ic_list_black_24dp"/>
+
+
+        </menu>
+
+
+    </item>
+
+    <item
+        android:id="@+id/indexed_recycler_view"
+        android:title="@string/indexed_lists"
+        android:icon="@drawable/ic_list_black_24dp">
+        <menu>
+            <item
+                android:id="@+id/indexed_list_type1"
+                android:title="@string/indexed_list_type1"
+                android:icon="@drawable/ic_list_black_24dp"/>
+
+            <item
+            android:id="@+id/indexed_list_type2"
+            android:title="@string/indexed_list_type2"
+            android:icon="@drawable/ic_list_black_24dp"/>
+
+            <item
+                android:id="@+id/indexed_list_type3"
+                android:title="@string/indexed_list_type3"
+                android:icon="@drawable/ic_list_black_24dp"/>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/checked_recycler_view"
+        android:title="@string/checked_list"
+        android:icon="@drawable/ic_list_black_24dp">
+        <menu>
+            <item
+                android:id="@+id/checked_list_type"
+                android:title="@string/checked_list_type"
+                android:icon="@drawable/ic_list_black_24dp"/>
+
+        </menu>
+    </item>
+</menu>
