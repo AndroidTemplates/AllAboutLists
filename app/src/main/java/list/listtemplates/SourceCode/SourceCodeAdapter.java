@@ -58,7 +58,7 @@ public class SourceCodeAdapter extends RecyclerView.Adapter <SourceCodeAdapter.S
 
         @Override
         public void onClick(View v) {
-            String url = "http://www.google.com";
+            String url = "https://github.com/AndroidTemplates/AllAboutLists";
             Intent i = new Intent(Intent.ACTION_VIEW);
             i.setData(Uri.parse(url));
             ctx.startActivity(i);
