@@ -36,6 +36,11 @@
     <string name="indexed_list_type1">IndexedRecyclerView</string>
     <string name="indexed_list_type2">FastScrollListView</string>
     <string name="indexed_list_type3">FastScrolledIndexList</string>
+    <string name="drag_drop_list_type">DragAndDrop</string>
+    <string name="drag_drop">DragAndDrop</string>
+    <string name="search_lists">SearchLists</string>
+    <string name="search_list_type">SearchRecycler</string>
+    <string name="action_search">Search</string>
 
 
 </resources>

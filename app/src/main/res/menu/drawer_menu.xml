@@ -143,6 +143,33 @@
     </item>
 
     <item
+        android:id="@+id/drag_drop_recycler_view"
+        android:title="@string/drag_drop"
+        android:icon="@drawable/ic_list_black_24dp">
+        <menu>
+            <item
+                android:id="@+id/drag_drop_list_type"
+                android:title="@string/drag_drop_list_type"
+                android:icon="@drawable/ic_list_black_24dp"/>
+
+        </menu>
+    </item>
+
+
+    <item
+        android:id="@+id/search_recycler_view"
+        android:title="@string/search_lists"
+        android:icon="@drawable/ic_list_black_24dp">
+        <menu>
+            <item
+                android:id="@+id/search_list_type"
+                android:title="@string/search_list_type"
+                android:icon="@drawable/ic_list_black_24dp"/>
+
+        </menu>
+    </item>
+
+    <item
         android:id="@+id/indexed_recycler_view"
         android:title="@string/indexed_lists"
         android:icon="@drawable/ic_list_black_24dp">
@@ -163,6 +190,9 @@
                 android:icon="@drawable/ic_list_black_24dp"/>
         </menu>
     </item>
+
+
+
 
     <item
         android:id="@+id/checked_recycler_view"

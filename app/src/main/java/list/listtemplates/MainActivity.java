@@ -16,9 +16,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 import list.listtemplates.AnimatedLists.FlipInTopAnimatorListFragment1;
 import list.listtemplates.AnimatedLists.LandingAnimatorListFragment;
@@ -28,6 +30,7 @@ import list.listtemplates.AnimatedLists.ScrollingAnimatorListFragment;
 import list.listtemplates.AnimatedLists.ScrollingAnimatorThirdPartyLibListFragment;
 import list.listtemplates.CheckedList.CheckedListFragment;
 import list.listtemplates.DBLists.DBWebServiceFragment;
+import list.listtemplates.DragDropList.DragDropListFragment;
 import list.listtemplates.ExpandableLists.ExpandabelListView;
 import list.listtemplates.ExpandableLists.ExpandableRecycleFragment;
 import list.listtemplates.HeterogenousLists.HeterogeneousListType1;
@@ -35,6 +38,7 @@ import list.listtemplates.HeterogenousLists.HeterogeneousListType2;
 import list.listtemplates.IndexedLists.FastScrollIndexListView;
 import list.listtemplates.IndexedLists.FastScrollListView;
 import list.listtemplates.IndexedLists.IndexedListFragment;
+import list.listtemplates.SearchLists.SearchFragment;
 import list.listtemplates.SectionedLists.SectionedHeterogenousFragment;
 import list.listtemplates.SectionedLists.SectionedHomogeneousFragment;
 import list.listtemplates.SourceCode.SourceCodeListFragment;
@@ -62,6 +66,9 @@ public class MainActivity extends AppCompatActivity implements  NavigationView.O
         setContentView(R.layout.activity_main);
         mToolbar = (Toolbar)findViewById(R.id.app_toolbar);
         setSupportActionBar(mToolbar);
+        LayoutInflater mInflater= LayoutInflater.from(getApplicationContext());
+        View mCustomView = mInflater.inflate(R.layout.toolbar_custom_view, null);
+        mToolbar.addView(mCustomView);
         saveActivityStateInGlobal();
         navigationViewDrawer = (NavigationView)findViewById(R.id.main_nav_view_drawer);
         mDrawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
@@ -266,6 +273,14 @@ public class MainActivity extends AppCompatActivity implements  NavigationView.O
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.frag_parentLayout, indexedListFrag3)
                     .commit();
+        }else if(mSelectedId ==R.id.drag_drop_list_type){
+              mDrawerLayout.closeDrawer(GravityCompat.START);
+            Fragment dragDropList = new DragDropListFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.frag_parentLayout,dragDropList).commit();
+        }else if(mSelectedId == R.id.search_list_type){
+            mDrawerLayout.closeDrawer(GravityCompat.START);
+            Fragment searchList = new SearchFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.frag_parentLayout,searchList).commit();
         }
     }
 
