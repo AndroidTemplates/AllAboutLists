@@ -38,6 +38,7 @@ import list.listtemplates.HeterogenousLists.HeterogeneousListType2;
 import list.listtemplates.IndexedLists.FastScrollIndexListView;
 import list.listtemplates.IndexedLists.FastScrollListView;
 import list.listtemplates.IndexedLists.IndexedListFragment;
+import list.listtemplates.MoreApps.MoreAppsFragment;
 import list.listtemplates.SearchLists.SearchFragment;
 import list.listtemplates.SectionedLists.SectionedHeterogenousFragment;
 import list.listtemplates.SectionedLists.SectionedHomogeneousFragment;
@@ -330,6 +331,12 @@ public class MainActivity extends AppCompatActivity implements  NavigationView.O
                         .addToBackStack(null)
                         .commit();
 
+            }else if(item.getItemId()==R.id.moreApps){
+                Fragment moreAppsFrag = new MoreAppsFragment();
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.frag_parentLayout, moreAppsFrag)
+                        .addToBackStack(null)
+                        .commit();
             }
             return super.onOptionsItemSelected(item);
     }
