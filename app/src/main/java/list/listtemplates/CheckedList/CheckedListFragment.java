@@ -6,11 +6,13 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -75,6 +77,7 @@ public class CheckedListFragment extends Fragment implements View.OnClickListene
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         checkedListView =  inflater.inflate(R.layout.fragment_checked_list, container, false);
+        initToolBar();
         checked_recycler_view = (RecyclerView) checkedListView.findViewById(R.id.checked_recycler_view);
         show_checked_data = (Button)checkedListView.findViewById(R.id.show_checked_data);
         show_checked_data.setOnClickListener(this);
@@ -130,5 +133,12 @@ public class CheckedListFragment extends Fragment implements View.OnClickListene
             checkedListDTOList.add(temp);
         }
         return  checkedListDTOList;
+    }
+
+    private void initToolBar(){
+        Toolbar mToolBar = (Toolbar)getActivity().findViewById(R.id.app_toolbar);
+        TextView toolBarTitle = (TextView)mToolBar.findViewById(R.id.title);
+        toolBarTitle.setText("Checked List");
+
     }
 }

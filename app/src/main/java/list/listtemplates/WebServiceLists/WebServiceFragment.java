@@ -10,10 +10,12 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.DefaultRetryPolicy;
@@ -90,6 +92,7 @@ public class WebServiceFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         webServiceView =  inflater.inflate(R.layout.fragment_web, container, false);
+        initToolBar();
         webServiceRecycler = (RecyclerView) webServiceView.findViewById(R.id.webservice_recycler_view);
 
 
@@ -169,5 +172,10 @@ public class WebServiceFragment extends Fragment {
         return false;
     }
 
+    private void initToolBar(){
+        Toolbar mToolBar = (Toolbar)getActivity().findViewById(R.id.app_toolbar);
+        TextView toolBarTitle = (TextView)mToolBar.findViewById(R.id.title);
+        toolBarTitle.setText("WebService List ");
 
+    }
 }

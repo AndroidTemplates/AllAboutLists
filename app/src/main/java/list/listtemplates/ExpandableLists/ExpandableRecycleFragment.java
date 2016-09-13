@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bignerdranch.expandablerecyclerview.Adapter.ExpandableRecyclerAdapter;
@@ -77,6 +79,7 @@ public class ExpandableRecycleFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         expandableRecyclerView =  inflater.inflate(R.layout.fragment_expandable_recycle, container, false);
+        initToolBar();
         expandable_recycler = (RecyclerView) expandableRecyclerView.findViewById(R.id.expandable_recyclerview);
         expandableParentDTOList = ListUtils.getExpandableRecyclerViewData();
         expandableVerticalAdapter = new ExpandableVerticalAdapter(getActivity(),ListUtils.getExpandableRecyclerViewData());
@@ -107,5 +110,10 @@ public class ExpandableRecycleFragment extends Fragment {
     }
 
 
+    private void initToolBar(){
+        Toolbar mToolBar = (Toolbar)getActivity().findViewById(R.id.app_toolbar);
+        TextView toolBarTitle = (TextView)mToolBar.findViewById(R.id.title);
+        toolBarTitle.setText("Expandable Lists");
 
+    }
 }

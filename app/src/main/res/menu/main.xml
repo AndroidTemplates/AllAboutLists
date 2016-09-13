@@ -7,6 +7,12 @@
         android:orderInCategory="100"
         android:title="Get Source"
         >
+    </item>
+    <item
+        android:id="@+id/moreApps"
+        android:orderInCategory="200"
+        android:title="More Apps"
+        >
 
 
     </item>

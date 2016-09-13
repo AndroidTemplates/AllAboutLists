@@ -3,10 +3,12 @@ package list.listtemplates.IndexedLists;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -83,6 +85,7 @@ View fastScrollView = null;
         }
 
         fastScrollView =  inflater.inflate(R.layout.fragment_fast_scroll_list_view, container, false);
+        initToolBar();
         fastScrollList = (ListView)fastScrollView.findViewById(R.id.fast_scroll_list);
 
         fastScrollList.setAdapter(new FastScrollAdapter(getActivity(),simpleDTOType1List,mapIndex,sections));
@@ -113,5 +116,11 @@ View fastScrollView = null;
        String[] sections = new String[sectionList.size()];
         sections = sectionList.toArray(sections);
         return  sections;
+    }
+    private void initToolBar(){
+        Toolbar mToolBar = (Toolbar)getActivity().findViewById(R.id.app_toolbar);
+        TextView toolBarTitle = (TextView)mToolBar.findViewById(R.id.title);
+        toolBarTitle.setText("Indexed Lists");
+
     }
 }

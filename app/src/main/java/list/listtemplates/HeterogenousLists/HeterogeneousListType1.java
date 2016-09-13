@@ -6,9 +6,11 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -77,6 +79,7 @@ public class HeterogeneousListType1 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         heterogeneousListView =  inflater.inflate(R.layout.fragment_heterogeneous_list_type1, container, false);
+        initToolBar();
         heterogeneousType1RecyclerView = (RecyclerView) heterogeneousListView.findViewById(R.id.heterorecyclerviewtype1);
         heterogeneousType1Adapter = new HeterogeneousType1Adapter(getActivity(), ListUtils.getHeterogeneousData());
         heterogeneousType1RecyclerView.setAdapter(heterogeneousType1Adapter);
@@ -91,7 +94,12 @@ public class HeterogeneousListType1 extends Fragment {
     }
 
 
+    private void initToolBar(){
+        Toolbar mToolBar = (Toolbar)getActivity().findViewById(R.id.app_toolbar);
+        TextView toolBarTitle = (TextView)mToolBar.findViewById(R.id.title);
+        toolBarTitle.setText("Heterogeneous Lists");
 
+    }
 
 
 

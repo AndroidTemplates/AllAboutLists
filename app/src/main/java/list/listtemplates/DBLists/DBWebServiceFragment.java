@@ -11,10 +11,12 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -93,6 +95,7 @@ public class DBWebServiceFragment extends Fragment implements SwipeRefreshLayout
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         webServiceView =  inflater.inflate(R.layout.fragment_web_refresh, container, false);
+        initToolBar();
         webServiceRecycler = (RecyclerView) webServiceView.findViewById(R.id.webservice_recycler_view);
         swipeRefreshLayout = (SwipeRefreshLayout)webServiceView.findViewById(R.id.swiperefreshlayout) ;
         swipeRefreshLayout.setOnRefreshListener(this);
@@ -220,5 +223,12 @@ public class DBWebServiceFragment extends Fragment implements SwipeRefreshLayout
             }
         });
         volleyRequestQueue.add(volleyJSONObjectRequest);
+    }
+
+    private void initToolBar(){
+        Toolbar mToolBar = (Toolbar)getActivity().findViewById(R.id.app_toolbar);
+        TextView toolBarTitle = (TextView)mToolBar.findViewById(R.id.title);
+        toolBarTitle.setText("DataBase Lists");
+
     }
 }

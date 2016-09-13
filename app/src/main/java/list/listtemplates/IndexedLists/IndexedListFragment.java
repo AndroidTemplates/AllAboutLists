@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -81,6 +82,7 @@ public class IndexedListFragment extends Fragment implements View.OnClickListene
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         indexedListView =  inflater.inflate(R.layout.fragment_indexed_list, container, false);
+        initToolBar();
 
         indexedRecyclerView = (RecyclerView)indexedListView.findViewById(R.id.index_recycler_view);
 
@@ -224,5 +226,10 @@ public class IndexedListFragment extends Fragment implements View.OnClickListene
         }
     }
 
+    private void initToolBar(){
+        Toolbar mToolBar = (Toolbar)getActivity().findViewById(R.id.app_toolbar);
+        TextView toolBarTitle = (TextView)mToolBar.findViewById(R.id.title);
+        toolBarTitle.setText("Indexed Lists");
 
+    }
 }

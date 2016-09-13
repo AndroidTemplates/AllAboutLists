@@ -8,12 +8,14 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,6 +83,7 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         searchListView =  inflater.inflate(R.layout.fragment_search, container, false);
+        initToolBar();
         searchRecyclerView = (RecyclerView) searchListView.findViewById(R.id.search_recycler_View);
         searchView = (SearchView) searchListView.findViewById(R.id.search_icon);
         searchView.setOnQueryTextListener(this);
@@ -122,5 +125,12 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
             }
         }
         return filteredModelList;
+    }
+
+    private void initToolBar(){
+        Toolbar mToolBar = (Toolbar)getActivity().findViewById(R.id.app_toolbar);
+        TextView toolBarTitle = (TextView)mToolBar.findViewById(R.id.title);
+        toolBarTitle.setText("Search List");
+
     }
 }

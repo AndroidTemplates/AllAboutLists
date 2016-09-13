@@ -6,10 +6,12 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import list.listtemplates.DividerItemDecoration;
 import list.listtemplates.R;
@@ -71,6 +73,7 @@ public class DragDropListFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         dragDropView =  inflater.inflate(R.layout.fragment_drag_drop_list, container, false);
+        initToolBar();
         drag_drop_recycler_view = (RecyclerView)dragDropView.findViewById(R.id.drag_drop_recycler_view);
 
         // Setup Adapter
@@ -88,6 +91,13 @@ public class DragDropListFragment extends Fragment {
         drag_drop_recycler_view.addItemDecoration(itemDecoration);
         drag_drop_recycler_view.setItemAnimator(new DefaultItemAnimator());
         return  dragDropView;
+    }
+
+    private void initToolBar(){
+        Toolbar mToolBar = (Toolbar)getActivity().findViewById(R.id.app_toolbar);
+        TextView toolBarTitle = (TextView)mToolBar.findViewById(R.id.title);
+        toolBarTitle.setText("DragDrop Lists");
+
     }
 
 }

@@ -8,11 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 import list.listtemplates.R;
+import list.listtemplates.Utils.ListUtils;
 import list.listtemplates.simplelistTypes.SimpleDTOType1;
 
 /**
@@ -23,9 +26,11 @@ public class SourceCodeAdapter extends RecyclerView.Adapter <SourceCodeAdapter.S
     List<String> sourceData = Collections.EMPTY_LIST;
     Context ctx;
     private LayoutInflater inflator;
-    public SourceCodeAdapter(Context ctx,List<String> sourceData){
+    HashMap<Integer,String> urlHash;
+    public SourceCodeAdapter(Context ctx, List<String> sourceData, HashMap<Integer,String> urlHash){
         this.ctx = ctx;
         this.sourceData = sourceData;
+        this.urlHash = urlHash;
         inflator = LayoutInflater.from(ctx);
     }
 
@@ -38,8 +43,8 @@ public class SourceCodeAdapter extends RecyclerView.Adapter <SourceCodeAdapter.S
 
     @Override
     public void onBindViewHolder(SourceHolder holder, int position) {
-
         holder.title.setText(sourceData.get(position));
+        holder.title.setTag(position);
     }
 
     @Override
@@ -51,17 +56,23 @@ public class SourceCodeAdapter extends RecyclerView.Adapter <SourceCodeAdapter.S
     public class SourceHolder  extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView title;
         SourceHolder(View itemView){
-                super(itemView);
+            super(itemView);
             title = (TextView) itemView.findViewById(R.id.source_row_label);
             title.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
-            String url = "https://github.com/AndroidTemplates/AllAboutLists";
-            Intent i = new Intent(Intent.ACTION_VIEW);
-            i.setData(Uri.parse(url));
-            ctx.startActivity(i);
+            int position = (int) title.getTag();
+            String url = urlHash.get(position); //"https://github.com/AndroidTemplates/AllAboutLists";
+          if(ListUtils.checkNetworkConnectivity(ctx)){
+              Intent i = new Intent(Intent.ACTION_VIEW);
+              i.setData(Uri.parse(url));
+              ctx.startActivity(i);
+          }else{
+              Toast.makeText(ctx,"Check Your internet Connectivity",Toast.LENGTH_LONG).show();
+          }
+
         }
     }
 }

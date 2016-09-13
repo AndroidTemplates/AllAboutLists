@@ -1,7 +1,11 @@
 package list.listtemplates.Utils;
 
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.widget.Toolbar;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -424,6 +428,17 @@ public class ListUtils {
         expandableParentDTOList.add(tempExpandableParentDTO2);
         return  expandableParentDTOList;
     }
+
+    public static boolean checkNetworkConnectivity(Context ctx) {
+        ConnectivityManager connectionManager = (ConnectivityManager) ctx
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = connectionManager.getActiveNetworkInfo();
+        if (netInfo != null && netInfo.isConnectedOrConnecting()) {
+            return true;
+        }
+        return false;
+    }
+
 
 
 }

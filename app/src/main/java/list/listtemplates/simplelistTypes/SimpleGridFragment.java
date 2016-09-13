@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,6 +71,7 @@ private View simpleGridView = null;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         simpleGridView =  inflater.inflate(R.layout.fragment_simple_grid, container, false);
+        initToolBar();
         simpleGridRecyclerView = (RecyclerView) simpleGridView.findViewById(R.id.simplegridrecyclerview);
 
      //   initTooBar("GridList");
@@ -82,10 +84,11 @@ private View simpleGridView = null;
         simpleGridRecyclerView.setAdapter(adapter);
         return  simpleGridView;
     }
-    Toolbar mToolBar;
-    private void initTooBar(String title){
-        mToolBar = (Toolbar) getActivity().findViewById(R.id.app_toolbar);
-        mToolBar.setTitle(title);
+    private void initToolBar(){
+        Toolbar mToolBar = (Toolbar)getActivity().findViewById(R.id.app_toolbar);
+        TextView toolBarTitle = (TextView)mToolBar.findViewById(R.id.title);
+        toolBarTitle.setText("SimpleGridList");
+
     }
 
 

@@ -3,10 +3,12 @@ package list.listtemplates.ExpandableLists;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -77,6 +79,7 @@ public class ExpandabelListView extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         expandableView =  inflater.inflate(R.layout.fragment_expandabel_list_view, container, false);
+        initToolBar();
         expandableListView = (ExpandableListView) expandableView.findViewById(R.id.expandable_list_view);
         HashMap<String, List<Object>> expandableHash = getExpandableListData();
                 expandableListViewAdapter = new ExpandableListViewAdapter(getActivity(),listDataHeader,expandableHash);
@@ -168,6 +171,13 @@ public class ExpandabelListView extends Fragment {
         listDataHeader.add("Best Wicket Keepers");
 
         return  listDataChild;
+    }
+
+    private void initToolBar(){
+        Toolbar mToolBar = (Toolbar)getActivity().findViewById(R.id.app_toolbar);
+        TextView toolBarTitle = (TextView)mToolBar.findViewById(R.id.title);
+        toolBarTitle.setText("Expandable Lists");
+
     }
 
 }

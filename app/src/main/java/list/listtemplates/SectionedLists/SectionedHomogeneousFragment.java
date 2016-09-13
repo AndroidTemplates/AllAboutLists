@@ -6,9 +6,11 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,6 +77,7 @@ public class SectionedHomogeneousFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         section_homogeneous_view =  inflater.inflate(R.layout.fragment_sectioned_homogeneous, container, false);
+        initToolBar();
         sectionHomogeneous_recycler_vew = (RecyclerView)section_homogeneous_view.findViewById(R.id.sec_homog_recyclerviewtype);
 
         sectionedHomogenousAdapter = new SectionedHomogenousAdapter(getActivity(), ListUtils.getSectionedHomoogeneousData());
@@ -88,6 +91,11 @@ public class SectionedHomogeneousFragment extends Fragment {
 
         return  section_homogeneous_view;
     }
+    private void initToolBar(){
+        Toolbar mToolBar = (Toolbar)getActivity().findViewById(R.id.app_toolbar);
+        TextView toolBarTitle = (TextView)mToolBar.findViewById(R.id.title);
+        toolBarTitle.setText("Sectioned  Lists");
 
+    }
 
 }

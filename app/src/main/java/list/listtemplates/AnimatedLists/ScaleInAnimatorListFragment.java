@@ -7,9 +7,11 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,6 +75,7 @@ public class ScaleInAnimatorListFragment extends Fragment implements View.OnClic
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         simpleListType1View =  inflater.inflate(R.layout.fragment_simple_list_type1, container, false);
+        initToolBar();
         simpleType1RecyclerView = (RecyclerView)simpleListType1View.findViewById(R.id.simpletype1recyclerview);
         add_item = (FloatingActionButton)simpleListType1View.findViewById(R.id.add_item);
         add_item.setOnClickListener(this);
@@ -114,5 +117,12 @@ public class ScaleInAnimatorListFragment extends Fragment implements View.OnClic
                 }
                 break;
         }
+    }
+
+    private void initToolBar(){
+        Toolbar mToolBar = (Toolbar)getActivity().findViewById(R.id.app_toolbar);
+        TextView toolBarTitle = (TextView)mToolBar.findViewById(R.id.title);
+        toolBarTitle.setText("Animation Lists");
+
     }
 }

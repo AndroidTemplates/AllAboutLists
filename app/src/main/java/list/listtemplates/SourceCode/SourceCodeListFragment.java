@@ -6,12 +6,15 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 import list.listtemplates.DividerItemDecoration;
@@ -70,8 +73,9 @@ public class SourceCodeListFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         sourceCodeView =  inflater.inflate(R.layout.fragment_source_code_list, container, false);
+        initToolBar();
         sourceRecyclerView = (RecyclerView)sourceCodeView.findViewById(R.id.source_code_recycler_view);
-        SourceCodeAdapter sourceCodeAdapter = new SourceCodeAdapter(getActivity(),getData());
+        SourceCodeAdapter sourceCodeAdapter = new SourceCodeAdapter(getActivity(),getData(),getURLHash());
         sourceRecyclerView.setAdapter(sourceCodeAdapter);
 
         sourceRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -94,7 +98,33 @@ public class SourceCodeListFragment extends Fragment {
         sourceCodeList.add("Animated");
         sourceCodeList.add("Indexed");
         sourceCodeList.add("Checked");
+        sourceCodeList.add("Sectioned");
+        sourceCodeList.add("DragDrop");
+        sourceCodeList.add("SearchList");
         return  sourceCodeList;
+    }
+
+    private HashMap<Integer,String> getURLHash(){
+        HashMap<Integer,String> urlHash = new HashMap<>();
+        urlHash.put(0,"https://github.com/AndroidTemplates/AllAboutLists/tree/master/app/src/main/java/list/listtemplates/simplelistTypes");
+        urlHash.put(1,"https://github.com/AndroidTemplates/AllAboutLists/tree/master/app/src/main/java/list/listtemplates/HeterogenousLists");
+        urlHash.put(2,"https://github.com/AndroidTemplates/AllAboutLists/tree/master/app/src/main/java/list/listtemplates/ExpandableLists");
+        urlHash.put(3,"https://github.com/AndroidTemplates/AllAboutLists/tree/master/app/src/main/java/list/listtemplates/WebServiceLists");
+        urlHash.put(4,"https://github.com/AndroidTemplates/AllAboutLists/tree/master/app/src/main/java/list/listtemplates/DBLists");
+        urlHash.put(5,"https://github.com/AndroidTemplates/AllAboutLists/tree/master/app/src/main/java/list/listtemplates/AnimatedLists");
+        urlHash.put(6,"https://github.com/AndroidTemplates/AllAboutLists/tree/master/app/src/main/java/list/listtemplates/IndexedLists");
+        urlHash.put(7,"https://github.com/AndroidTemplates/AllAboutLists/tree/master/app/src/main/java/list/listtemplates/CheckedList");
+        urlHash.put(8,"https://github.com/AndroidTemplates/AllAboutLists/tree/master/app/src/main/java/list/listtemplates/SectionedLists");
+        urlHash.put(9,"https://github.com/AndroidTemplates/AllAboutLists/tree/master/app/src/main/java/list/listtemplates/DragDropList");
+        urlHash.put(10,"https://github.com/AndroidTemplates/AllAboutLists/tree/master/app/src/main/java/list/listtemplates/SearchLists");
+        return  urlHash;
+    }
+
+    private void initToolBar(){
+        Toolbar mToolBar = (Toolbar)getActivity().findViewById(R.id.app_toolbar);
+        TextView toolBarTitle = (TextView)mToolBar.findViewById(R.id.title);
+        toolBarTitle.setText("List Template Source");
+
     }
 
 }
