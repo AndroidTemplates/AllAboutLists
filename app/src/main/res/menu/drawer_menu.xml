@@ -206,4 +206,17 @@
 
         </menu>
     </item>
+
+    <item
+        android:id="@+id/chat_recycler_view"
+        android:title="@string/chat_lists"
+        android:icon="@drawable/ic_list_black_24dp">
+        <menu>
+            <item
+                android:id="@+id/chat_list_type1"
+                android:title="@string/chat_list_type1"
+                android:icon="@drawable/ic_list_black_24dp"/>
+
+        </menu>
+    </item>
 </menu>

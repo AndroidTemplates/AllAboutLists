@@ -80,6 +80,7 @@ public class HeterogeneousType1Adapter extends RecyclerView.Adapter<RecyclerView
      //   return super.getItemViewType(position);
     }
 
+
     private void configureViewHolder1(SimpleType1ViewHolder holder, int position) {
         SimpleDTOType1 simpleDTOType1 =(SimpleDTOType1) items.get(position);
         holder.title.setText(simpleDTOType1.title);

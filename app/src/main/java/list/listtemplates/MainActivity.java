@@ -28,6 +28,7 @@ import list.listtemplates.AnimatedLists.ScaleInAnimatorListFragment;
 import list.listtemplates.AnimatedLists.ScaleInAnimatorListFragment1;
 import list.listtemplates.AnimatedLists.ScrollingAnimatorListFragment;
 import list.listtemplates.AnimatedLists.ScrollingAnimatorThirdPartyLibListFragment;
+import list.listtemplates.ChatLists.BasicChatListFragment;
 import list.listtemplates.CheckedList.CheckedListFragment;
 import list.listtemplates.DBLists.DBWebServiceFragment;
 import list.listtemplates.DragDropList.DragDropListFragment;
@@ -282,6 +283,10 @@ public class MainActivity extends AppCompatActivity implements  NavigationView.O
             mDrawerLayout.closeDrawer(GravityCompat.START);
             Fragment searchList = new SearchFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.frag_parentLayout,searchList).commit();
+        }else if(mSelectedId == R.id.chat_list_type1){
+            mDrawerLayout.closeDrawer(GravityCompat.START);
+            Fragment basicChatList = new BasicChatListFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.frag_parentLayout,basicChatList).commit();
         }
     }
 
@@ -324,21 +329,21 @@ public class MainActivity extends AppCompatActivity implements  NavigationView.O
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-            if(item.getItemId()==R.id.action_settings){
-                Fragment sourceFrag = new SourceCodeListFragment();
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.frag_parentLayout, sourceFrag)
-                        .addToBackStack(null)
-                        .commit();
+        if(item.getItemId()==R.id.action_settings){
+            Fragment sourceFrag = new SourceCodeListFragment();
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.frag_parentLayout, sourceFrag)
+                    .addToBackStack(null)
+                    .commit();
 
-            }else if(item.getItemId()==R.id.moreApps){
-                Fragment moreAppsFrag = new MoreAppsFragment();
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.frag_parentLayout, moreAppsFrag)
-                        .addToBackStack(null)
-                        .commit();
-            }
-            return super.onOptionsItemSelected(item);
+        }else if(item.getItemId()==R.id.moreApps){
+            Fragment moreAppsFrag = new MoreAppsFragment();
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.frag_parentLayout, moreAppsFrag)
+                    .addToBackStack(null)
+                    .commit();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 

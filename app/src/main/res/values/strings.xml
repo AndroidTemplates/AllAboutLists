@@ -41,6 +41,8 @@
     <string name="search_lists">SearchLists</string>
     <string name="search_list_type">SearchRecycler</string>
     <string name="action_search">Search</string>
+    <string name="chat_lists">ChatLists</string>
+    <string name="chat_list_type1">BasicChatList</string>
 
 
 </resources>

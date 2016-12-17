@@ -50,7 +50,7 @@ public class DBWebServiceFragment extends Fragment implements SwipeRefreshLayout
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    public static final String  URL_VOLLEY = "http://api.walmartlabs.com/v1/paginated/items?format=json&category=3944&apiKey=xxxxxxxxxxx";
+    public static final String  URL_VOLLEY = "http://api.walmartlabs.com/v1/paginated/items?format=json&category=3944&apiKey=xxxxx";
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;

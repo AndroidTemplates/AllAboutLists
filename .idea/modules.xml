@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ListTemplates.iml" filepath="$PROJECT_DIR$/ListTemplates.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GIT_AllAboutLists.iml" filepath="$PROJECT_DIR$/GIT_AllAboutLists.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
